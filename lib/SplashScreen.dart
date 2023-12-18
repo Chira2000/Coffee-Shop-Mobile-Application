@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'RegisterPage.dart';
+
 class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class SplashScreen extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 40, 0, 80),
+                      padding: const EdgeInsets.fromLTRB(0, 40, 0, 50),
                       child: Column(
                         children: [
                           Text(
@@ -36,14 +38,27 @@ class SplashScreen extends StatelessWidget {
                                 color:
                                     const Color.fromARGB(255, 241, 239, 237)),
                           ),
-                          SizedBox(
-                            height: 40,
-                            width: 20),
-                            ElevatedButton(onPressed: , child: 
-                            Text("Get Started")
+                          SizedBox(height: 40, width: 20),
+                          Material(
+                            color: Color.fromARGB(255, 168, 97, 5),
+                            borderRadius: BorderRadius.circular(20),
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => RegisterPage()));
+                              },
+                              child: Container(
+                                padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                                child: Text(
+                                  "Get Started",
+                                  style: GoogleFonts.lato(
+                                      fontSize: 20, color: Colors.white),
+                                ),
+                              ),
                             ),
-                            
-                          
+                          ),
                         ],
                       ),
                     ),
